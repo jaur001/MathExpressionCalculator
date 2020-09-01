@@ -41,4 +41,16 @@ This project was made with Spring boot so the server (Tomcat) is embedded, so it
 * Thymeleaf - XML/HTML5 template
 * Boostrap - CSS library
 
+## Web Interface
+![demostration](https://github.com/jaur001/MathExpressionCalculator/blob/master/calculator/gifs/demostration2.gif)
+
+
+
+![demostration](https://github.com/jaur001/MathExpressionCalculator/blob/master/calculator/gifs/demostration3.gif)
+
+
+
+## Restful Web Service
+
+![demostration](https://github.com/jaur001/MathExpressionCalculator/blob/master/calculator/gifs/demostration.gif)
 
