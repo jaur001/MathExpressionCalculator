@@ -1,0 +1,26 @@
+.btn{
+    width: 16%;
+}
+.container{
+    text-align: center;
+    height: max-content;
+    padding: 10px;
+}
+
+.rounded {
+    margin: 30px;
+    border-style: solid;
+    border-width: medium;
+}
+
+.d-inline-block{
+    display: inline-block;
+}
+
+.input-group-text{
+    display: inline-block;
+}
+
+.card-title{
+    font-size: 30px;
+}

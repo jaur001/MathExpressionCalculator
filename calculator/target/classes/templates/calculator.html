@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Calculator</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css" integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" crossorigin="anonymous">
+    <link rel="stylesheet" type="text/css" th:href="@{/style.css}">
+    <script>
+        function addOperation(operation){
+            document.getElementById("text").value += operation;
+        }
+        function deleteOperation(){
+            let operation = document.getElementById("text").value;
+            document.getElementById("text").value = operation.substring(0,operation.length-1);
+        }
+    </script>
+</head>
+<body>
+
+    <div class="container bg-secondary align-content-lg-center">
+        <h3 class="card-title text-light">Calculator</h3>
+        <hr>
+        <form action="#" th:action="@{/calculator/calculation}" th:object="${operation}" method="POST">
+            <div class="d-inline-block">
+                <div class="d-block">
+                    <label class="text-white" for="text">Operation</label><br><input class="input-group-text" id="text" type="text" th:field="*{text}">
+                </div>
+                <div class="d-block">
+                    <label class="text-white" for="result">Result</label><br><input class="input-group-text" id="result" type="text" th:field="*{result}">
+                </div>
+            </div>
+            <br>
+            <br>
+            <div class="rounded bg-secondary border-dark">
+                <button type="button" class="btn btn-danger col-2" onclick="deleteOperation()">CE</button>
+                <button type="button" class="btn btn-primary col-2" onclick="addOperation('1')">1</button>
+                <button type="button" class="btn btn-primary col-2" onclick="addOperation('2')">2</button>
+                <button type="button" class="btn btn-primary col-2" onclick="addOperation('3')">3</button>
+                <button type="button" class="btn btn-info col-2" onclick="addOperation('(')">(</button>
+                <button type="button" class="btn btn-info col-2" onclick="addOperation(')')">)</button>
+                <br>
+                <button type="button" class="btn btn-info col-2" onclick="addOperation('+')">+</button>
+                <button type="button" class="btn btn-primary col-2" onclick="addOperation('4')">4</button>
+                <button type="button" class="btn btn-primary col-2" onclick="addOperation('5')">5</button>
+                <button type="button" class="btn btn-primary col-2" onclick="addOperation('6')">6</button>
+                <button type="button" class="btn btn-info col-2" onclick="addOperation('π')">π</button>
+                <button type="button" class="btn btn-info col-2" onclick="addOperation('e')">e</button>
+                <br>
+                <button type="button" class="btn btn-info col-2" onclick="addOperation('-')">-</button>
+                <button type="button" class="btn btn-primary col-2" onclick="addOperation('7')">7</button>
+                <button type="button" class="btn btn-primary col-2" onclick="addOperation('8')">8</button>
+                <button type="button" class="btn btn-primary col-2" onclick="addOperation('9')">9</button>
+                <button type="button" class="btn btn-info col-2" onclick="addOperation('!')">!</button>
+                <button type="button" class="btn btn-info col-2" onclick="addOperation('sin')">sin</button>
+                <br>
+                <button type="button" class="btn btn-info col-2" onclick="addOperation('x')">x</button>
+                <button type="button" class="btn btn-primary col-2" onclick="addOperation('0')">0</button>
+                <button type="button" class="btn btn-primary col-2" onclick="addOperation('.')">.</button>
+                <input class="btn btn-primary col-2" type="submit" value="=">
+                <button type="button" class="btn btn-info col-2" onclick="addOperation('cos')">cos</button>
+                <button type="button" class="btn btn-info col-2" onclick="addOperation('tan')">tan</button>
+                <br>
+                <button type="button" class="btn btn-info col-2" onclick="addOperation('/')">/</button>
+                <button type="button" class="btn btn-info col-2" onclick="addOperation('^')">^</button>
+                <button type="button" class="btn btn-info col-2" onclick="addOperation('√')">√</button>
+                <button type="button" class="btn btn-info col-2" onclick="addOperation('%')">%</button>
+                <button type="button" class="btn btn-info col-2" onclick="addOperation('log')">log</button>
+                <button type="button" class="btn btn-info col-2" onclick="addOperation('ln')">ln</button>
+                <br>
+            </div>
+        </form>
+    </div>
+</body>
+</html>
